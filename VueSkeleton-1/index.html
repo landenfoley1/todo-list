@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,15 +27,19 @@
         <div class="container">
             <h2>
                 <span>Todo</span>
-                <span class="mask-num">{{completeList}}</span>
+                <!-- <span class="todo-num">{{completeList}}</span> -->
             </h2>
-            <ul class="mask-list" >
-                <li v-for="todo in completeList" v-if="!todo.checked"></li>
+            <ul class="todo-list" >
+               <template v-for="todo in completeList">
+                    <li v-if="!todo.checked">
+        
+                    </li>
+               </template>
                 <!-- <li v-for="(mask,ind) in needDoList"
                 :key="mask.id"> -->
                     <div>
-                        <input type="checkbox" :change="doCheck(todo)" />
-                        <span>{{todo.title}}</span>
+                        <input type="checkbox" :change="doCheck(todo)">
+                        <!-- <span>{{todo.title}}</span> -->
                         
                     </div>
                     <button class="button-remove"
@@ -44,10 +48,14 @@
             </ul>
             <h2>
                 <span>Compleated</span>
-                <span class="mask-num">{{completeList}}</span>
+                <!-- <span class="todo-num">{{completeList}}</span> -->
             </h2>
-            <ul class="mask-list complete-list">
-                <li v-for="todo in completeList" v-if="todo.checked"></li>
+            <ul class="todo-list complete-list">
+                <template v-for="todo in completeList">
+                    <li v-if="todo.checked">
+
+                    </li>
+                </template>
                 <!-- <li v-for="(mask,ind) in completeList"
                 :key="mask.id"> -->
                     <div>
