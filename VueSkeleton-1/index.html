@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -22,57 +23,32 @@
                     <button class="button" type="submit"
                     >Add a new task</button>
                 </form>
+                
             </div>
         </div>
         <div class="container">
             <h2>
                 <span>Todo</span>
-                <!-- <span class="todo-num">{{completeList}}</span> -->
+                
             </h2>
             <ul class="todo-list" >
-               <template v-for="todo in completeList">
-                    <li v-if="!todo.checked">
-        
-                    </li>
-               </template>
-                <!-- <li v-for="(mask,ind) in needDoList"
-                :key="mask.id"> -->
+               <template v-for="(todo,ind) in completeList">
+                    <li v-if="!todo?.checked">
+    
                     <div>
                         <input type="checkbox" :change="doCheck(todo)">
-                        <!-- <span>{{todo.title}}</span> -->
+                        <span>{{todo.title}}</span>
                         
                     </div>
                     <button class="button-remove"
-                    @click="removetodo(ind)">Remove</button>
-                </li>
-            </ul>
-            <h2>
-                <span>Compleated</span>
-                <!-- <span class="todo-num">{{completeList}}</span> -->
-            </h2>
-            <ul class="todo-list complete-list">
-                <template v-for="todo in completeList">
-                    <li v-if="todo.checked">
-
+                    @click="removetodo(todo)">Remove</button>
+            
                     </li>
                 </template>
-                <!-- <li v-for="(mask,ind) in completeList"
-                :key="mask.id"> -->
-                    <div>
-                        <input type="checkbox" :change="completeCheck(todo)">
-                        <span>{{todo.title}}</span>
-                    </div>
-                    <button class="button-remove"
-                    @click="deleteCompleteCheck(todo)">Remove</button>
-                </li>
-            </ul>
+           
         </div>
     </div>
-  
-   <!-- <li v-for="todo in completeList" v-if="todo.checked"></li>
-   <li v-for="todo in completeList" v-if="!todo.checked"></li> -->
 
-   
     <script src="https://unpkg.com/vue@next"></script>
     <script src="js/main.js"></script>
     

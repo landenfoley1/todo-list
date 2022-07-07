@@ -3,9 +3,8 @@ const App = {
     data(){
         return {
             inputValue:'',
-            // needDoList: [],
             completeList:[],
-            // saveTodo:'',
+            
             
            
         }
@@ -14,7 +13,6 @@ const App = {
         if (localStorage.getItem('completeList')) {
           try {
             this.completeList = JSON.parse(localStorage.getItem('completeList'));
-            // this.needDoList = JSON.parse(localStorage.getItem("needDoList"));
           } catch(e) {
             localStorage.removeItem('completeList');
             
@@ -37,7 +35,7 @@ const App = {
             }
         },
         removetodo(ind){
-            this.todocheck.splice(ind,1);
+            this.completeList.splice(ind,1)
             // this allows you to remove your todos
             this.saveTodo();
             
@@ -49,18 +47,7 @@ const App = {
                 this.saveTodo();
             }
         },
-        completeCheck(todo){
-            if(todo.checked === false){
-                this.completeList.push(todo)
-                this.completeList = this.completeList.filter(item=> todo.id != item.id)
-                // this makes is what makes the completed todos go to the done section
-                this.saveTodo();
-            }
-        },
-        deleteCompleteCheck(todo){
-            this.completeList = this.completeList.filter(item=> todo.id != item.id)
-            this.saveTodo();
-        },
+       
         saveTodo() {
             const parsed = JSON.stringify(this.completeList);
             localStorage.setItem('completeList', parsed);
