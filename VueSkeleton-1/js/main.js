@@ -35,7 +35,7 @@ const App = {
         doCheck(todo){
             if(todo.checked == true){
                 this.completeList.push(todo)
-                this.completeList=this.completeList.filter(item=>item.id !=todo.id)
+                this.completeList = this.completeList.filter(item => item.id !=todo.id)
                 this.saveTodo();
             }
         },

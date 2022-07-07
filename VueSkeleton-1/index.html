@@ -18,8 +18,9 @@
                     <input type="text"
                     v-model="inputValue"
                     >
-                    <button class="button" type="submit"
-                    >Add a new task</button>
+                    <button class="button" type="submit">
+                        Add a new task
+                </button>
                 </form>
             </div>
         </div>
@@ -34,16 +35,15 @@
                             <input type="checkbox" :change="doCheck(todo)">
                             <span>{{todo.title}}</span>
                         </div>
-                        <button class="button-remove"
-                        @click="removetodo(todo)">Remove</button>
+                        <button class="button-remove" @click="removetodo(todo)">
+                            Remove
+                        </button>
                     </li>
                 </template>
             </ul>
         </div>
        
-
-    <script src="https://unpkg.com/vue@next"></script>
-    <script src="js/main.js"></script>
-    
 </body>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="js/main.js"></script>
 </html>
