@@ -3,9 +3,8 @@ const App = {
     data(){
         return {
             inputValue:'',
-            // needDoList: [],
             completeList:[],
-            // saveTodo:'',
+            
             
            
         }
@@ -14,7 +13,6 @@ const App = {
         if (localStorage.getItem('completeList')) {
           try {
             this.completeList = JSON.parse(localStorage.getItem('completeList'));
-            // this.needDoList = JSON.parse(localStorage.getItem("needDoList"));
           } catch(e) {
             localStorage.removeItem('completeList');
             
@@ -31,14 +29,13 @@ const App = {
                     checked: false
                 });
                 this.inputValue = '';
-                // this allows you to add to your list and counts it
+                // this allows you to add to your list
                 this.saveTodo();
                 
             }
         },
         removetodo(ind){
-            // completeList.value = completeList.filter((completeList) => != todo)
-            this.completeList.splice(ind,1)
+            this.completeList.splice(ind, 1)
             // this allows you to remove your todos
             this.saveTodo();
             
