@@ -14,13 +14,12 @@ const App = {
             }
         }
     },
-
     methods: {
         addList() {
             if(this.inputValue) {
                 this.completeList.push({
-                    title : this.inputValue,
-                    checked : false
+                    title: this.inputValue,
+                    checked: false
                 });
                 this.inputValue = '';
                 // this allows you to add to your list
@@ -45,5 +44,4 @@ const App = {
         },
     }
 }
-
 Vue.createApp(App).mount('#app')
