@@ -1,5 +1,5 @@
 const App = {
-    data(){
+    data() {
         return {
             inputValue:'',
             completeList:[],  
@@ -16,26 +16,26 @@ const App = {
     },
 
     methods: {
-        addList(){
-            if(this.inputValue){
+        addList() {
+            if(this.inputValue) {
                 this.completeList.push({
                     title : this.inputValue,
-                    checked: false
+                    checked : false
                 });
                 this.inputValue = '';
                 // this allows you to add to your list
                 this.saveTodo(); 
             }
         },
-        removetodo(ind){
+        removetodo(ind) {
             this.completeList.splice(ind, 1)
             // this allows you to remove your todos
             this.saveTodo();
         },
-        doCheck(todo){
-            if(todo.checked == true){
+        doCheck(todo) {
+            if(todo.checked == true) {
                 this.completeList.push(todo)
-                this.completeList = this.completeList.filter(item => item.id !=todo.id)
+                this.completeList = this.completeList.filter(item => item.id != todo.id)
                 this.saveTodo();
             }
         },
