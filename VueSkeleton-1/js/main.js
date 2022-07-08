@@ -26,7 +26,7 @@ const App = {
                 this.saveTodo(); 
             }
         },
-        removetodo(ind) {
+        removeTodo(ind) {
             this.completeList.splice(ind, 1)
             // this allows you to remove your todos
             this.saveTodo();
